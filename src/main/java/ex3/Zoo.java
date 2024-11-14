@@ -1,29 +1,49 @@
 package ex3;
+
+import java.util.List;
+
+/** Classe permettant la gestion d'un zoo
+ *
+ */
 public class Zoo {
 
+	/** Chaine de caractère contenant le nom du zoo */
 	private String nom;
-	private List<String> types;
-	private List<String> noms;
-	private List<String> comportements;
 
+	/** Liste de chaines de caractères contenant les différents animaux */
+	private List<Animal> animaux;
+
+	/** Constructeur
+	 *
+	 * @param nom
+	 */
 	public Zoo(String nom){
 		this.nom = nom;
 	}
 
-	public void addAnimal(String nomAnimal, String typeAnimal, String comportement){
-		types.add(typeAnimal);
-		noms.add(nomAnimal);
-		comportements.add(comportement);
+	/** Méthode permettant d'ajouter une animal
+	 *
+	 * @param animal
+	 */
+	public void addAnimal(Animal animal){
+		animaux.add(animal);
 	}
-	
+
+	/** Méthode permettant d'afficher les différents animaux
+	 *
+	 */
 	public void afficherListeAnimaux(){
-		for (int i=0; i<types.size(); i++) {
-			System.out.println(noms.get(i)+" "+types.get(i)+" "+comportements.get(i));
+		for (Animal animal : animaux) {
+			System.out.println(animal);
 		}
 	}
-	
-	public int taille() {
-		return types.size();
+
+	/** Méthode permattant de retourner le nombre d'animaux présent dans le zoo
+	 *
+	 * @return
+	 */
+	public int nombreAnimaux() {
+		return animaux.size();
 	}
 
 	/** Getter for nom

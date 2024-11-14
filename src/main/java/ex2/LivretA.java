@@ -16,10 +16,6 @@ public class LivretA extends CompteBancaire {
 		this.tauxRemuneration = tauxRemuneration;
 	}
 
-	/** Méthode qui override celle de la classe mère car un livretA ne peut avoir de découvert
-	 *
-	 * @param montant
-	 */
 	@Override
 	public void debiterMontant(double montant) {
 		if (this.getSolde() - montant > 0){
